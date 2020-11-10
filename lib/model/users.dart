@@ -1,6 +1,6 @@
 part of 'models.dart';
 
-class User extends Equatable {
+class UserX extends Equatable {
   final String id; // auto generated from Firebase
   final String email;
   final String name;
@@ -10,7 +10,7 @@ class User extends Equatable {
   final int balance; // saldo
 
   // deklarasikan variable diatas
-  User(this.id, this.email,
+  UserX(this.id, this.email,
       {this.name,
       this.profilePicture,
       this.selectedGenres,

@@ -3,8 +3,8 @@ part of 'services.dart';
 class AuthServices {
   static FirebaseAuth _auth = FirebaseAuth.instance;
 
-  static Future<SigInSignUpResult> signUp(String email, String password, String name,
-      List<String> selectedGenres, String selectedLanguage) async {
+  static Future<SigInSignUpResult> signUp(String email, String password,
+      String name, List<String> selectedGenres, String selectedLanguage) async {
     try {
       // mendaftarkan email dan password ke Firebase
       UserCredential result = await _auth.createUserWithEmailAndPassword(
@@ -14,9 +14,9 @@ class AuthServices {
           selectedGenres: selectedGenres,
           selectedLanguage: selectedLanguage);
 
-      await UserServices.updateUser(user);
+      await UserServices.updateUser(users);
 
-      return SigInSignUpResult(user: user)
+      return SigInSignUpResult(user: users);
     } catch (e) {
       return SigInSignUpResult(message: e.toString());
     }

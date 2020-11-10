@@ -1,3 +1,4 @@
+// ignore: unused_import
 import 'package:bwa_flutix/model/models.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
