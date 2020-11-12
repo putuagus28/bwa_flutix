@@ -1,21 +1,21 @@
 part of 'services.dart';
 
 class UserServices {
-  static CollectionReference userCollection =
+  static CollectionReference _userCollection =
       FirebaseFirestore.instance.collection('users');
 
-  static Future<void> updateUser(User userm) async {
+  static Future<void> updateUser(UserX user) async {
     String genres = "";
-    for (var genre in userm.selectedGenres) {
-      genres += genres + ((genre != userm.selectedGenres.last) ? ',' : '');
+    for (var genre in user.selectedGenres) {
+      genres += genres + ((genre != user.selectedGenres.last) ? ',' : '');
     }
 
-    _userCollection.document(userm.id).setData({
+    _userCollection.doc(user.id).set({
       'email': user.email,
       'name': user.name,
       'balance': user.balance,
       'selectedGenres': user.selectedGenres,
-      'selectedLanguage': user.selectLanguage,
+      'selectedLanguage': user.selectedLanguage,
       'profilePicture': user.profilePicture ?? ""
     });
   }

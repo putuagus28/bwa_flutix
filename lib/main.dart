@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
               RaisedButton(
                 child: Text("Sign Up"),
                 onPressed: () async {
-                  SigInSignUpResult result = await AuthServices.signUp(
+                  SignInSignUpResult result = await AuthServices.signUp(
                       "ajussaditya@gmail.com",
                       "12345",
                       "agus",
