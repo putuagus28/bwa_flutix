@@ -9,7 +9,6 @@ class UserServices {
     for (var genre in user.selectedGenres) {
       genres += genres + ((genre != user.selectedGenres.last) ? ',' : '');
     }
-
     _userCollection.doc(user.id).set({
       'email': user.email,
       'name': user.name,

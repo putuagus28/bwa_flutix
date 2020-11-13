@@ -1,7 +1,10 @@
 import 'package:bwa_flutix/services/services.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -17,7 +20,7 @@ class MyApp extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               RaisedButton(
-                child: Text("Sign Up"),
+                child: Text("Sign Up Now"),
                 onPressed: () async {
                   SignInSignUpResult result = await AuthServices.signUp(
                       "ajussaditya@gmail.com",

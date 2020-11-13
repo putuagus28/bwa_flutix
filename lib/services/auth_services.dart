@@ -8,7 +8,7 @@ class AuthServices {
     try {
       // mendaftarkan email dan password ke Firebase
       UserCredential result = await _auth.createUserWithEmailAndPassword(
-          email: 'ajuss@gmail.com', password: 'aguasu1212');
+          email: email, password: password);
       UserX user1 = result.user.convertToUser(
           name: name,
           selectedGenres: selectedGenres,
